@@ -5,7 +5,7 @@ import pandas as pd
 
 
 # Create and enable CORS for the entire app
-app = Flask(__name__, static_url_path='/my-workout-app/build', static_folder='my-workout-app/build')
+app = Flask(__name__, static_url_path='/frontend/build', static_folder='frontend/build')
 CORS(app)
 
 # Function to generate the workout plan based on user inputs
@@ -64,10 +64,10 @@ def serve(path):
         return send_from_directory(app.static_folder, path)
     else:
         return send_from_directory(app.static_folder, "index.html")
-     #if path != "" and os.path.exists(os.path.join(os.path.dirname(__file__), "my-workout-app/build/" + path)):
-       # return send_from_directory(os.path.join(os.path.dirname(__file__), "my-workout-app/build"), path)
+     #if path != "" and os.path.exists(os.path.join(os.path.dirname(__file__), "frontend/build/" + path)):
+       # return send_from_directory(os.path.join(os.path.dirname(__file__), "frontend/build"), path)
     # else:
-        # return send_from_directory(os.path.join(os.path.dirname(__file__), "my-workout-app/build"), "index.html")
+        # return send_from_directory(os.path.join(os.path.dirname(__file__), "frontend/build"), "index.html")
 
 # Home route
 # @app.route('/')
